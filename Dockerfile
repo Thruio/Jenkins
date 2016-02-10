@@ -14,4 +14,5 @@ RUN apt-get update -qq && \
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
+RUN groupadd -g 125 docker && usermod -a -G docker jenkins 
 USER jenkins
